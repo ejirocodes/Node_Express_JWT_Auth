@@ -5,8 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3330;
-const URL =
-  'mongodb+srv://Ejiro:Ejiroghene10@cluster0.rsi5w.mongodb.net/Node_Express_Auth?retryWrites=true&w=majority';
+const URL = `mongodb+srv://Ejiro:${process.env.DB_PASSWORD}@cluster0.rsi5w.mongodb.net/Node_Express_Auth`;
 
 app.use(express.static('public'));
 
