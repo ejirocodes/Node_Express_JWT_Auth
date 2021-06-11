@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
+dotenv.config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3330;
 const URL =
   'mongodb+srv://Ejiro:Ejiroghene10@cluster0.rsi5w.mongodb.net/Node_Express_Auth?retryWrites=true&w=majority';
 
