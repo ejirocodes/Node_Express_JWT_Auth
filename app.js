@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const authRoutes = require('./src/route/auth.route');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 3330;
 const URL = `mongodb+srv://Ejiro:${process.env.DB_PASSWORD}@cluster0.rsi5w.mongodb.net/Node_Express_Auth`;
 
 app.use(express.static('public'));
+app.use(express.json());
 
 app.set('view engine', 'ejs');
 
@@ -21,3 +23,4 @@ mongoose
 
 app.get('/', (req, res) => res.render('home'));
 app.get('/smoothies', (req, res) => res.render('smoothies'));
+app.use(authRoutes);

@@ -7,7 +7,7 @@ router
   .get(authController.signupGet)
   .post(authController.signupPost);
 router
-  .route('/logn')
+  .route('/login')
   .get(authController.loginGet)
   .post(authController.loginPost);
 
