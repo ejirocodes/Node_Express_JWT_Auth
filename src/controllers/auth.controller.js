@@ -15,6 +15,7 @@ const loginPost = async (req, res, next) => {
 
   try {
     const user = await User.create({ email, password });
+    console.log(user);
     res.status(201).send({ data: user });
     if (!email || !password) {
       console.log('');
@@ -24,6 +25,7 @@ const loginPost = async (req, res, next) => {
     }
   } catch (error) {
     console.log(error);
+    res.status(400).send('An error occured, user not created', error);
   }
 };
 
